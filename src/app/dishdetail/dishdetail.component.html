@@ -1,10 +1,5 @@
-<div class="container"
-    fxLayout="row"
-    fxLayout.sm="column"
-    fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around center"
-    fxLayoutGap="10px" 
-    fxLayoutGap.xs="0">
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
+  fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
 
   <div fxFlex="40">
     <div fxFlex *ngIf="dish">
@@ -25,18 +20,22 @@
         </mat-card-actions>
       </mat-card>
     </div>
-    
+
   </div>
 
   <div fxFlex="40">
     <h3>Comments</h3>
     <mat-list *ngFor="let dish of dish.comments">
-      <mat-list-item><p>{{dish.comment}}</p></mat-list-item>
+      <mat-list-item>
+        <p>{{dish.comment}}</p>
+      </mat-list-item>
       <mat-list-item>{{dish.rating}} Stars</mat-list-item>
-      
-      <mat-list-item><p>--{{dish.author}} {{dish.date | date}}</p></mat-list-item>
+
+      <mat-list-item>
+        <p>--{{dish.author}} {{dish.date | date}}</p>
+      </mat-list-item>
     </mat-list>
-    
+
   </div>
 
 </div>
