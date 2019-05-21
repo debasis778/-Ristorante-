@@ -63,7 +63,7 @@
       <mat-list-item>{{lead.designation}}</mat-list-item>
       <mat-list-item>{{lead.description}}</mat-list-item>
     </mat-list>-->
-    <mat-list>
+    <mat-list *ngIf="leader">
       <mat-list-item *ngFor="let lead of leader">
         <img matListAvatar src={{lead.image}} >
         <h3 matLine> {{lead.name}} {{lead.abbr}} </h3>
@@ -75,6 +75,9 @@
         </p>
       </mat-list-item>
     </mat-list>
+    <div [hidden]="leader">
+      <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
   
   </div>
 </div>

@@ -1,12 +1,12 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
   fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
 
-  <div fxFlex="40">
+  <div fxFlex="40"  >
     <div fxFlex *ngIf="dish">
       <mat-card>
         <mat-card-header>
           <mat-card-title>
-            <h3>{{dish.name | uppercase}}</h3>
+            <h3 *ngIf="dish">{{dish.name | uppercase}}</h3>
           </mat-card-title>
         </mat-card-header>
         <img mat-card-image src={{dish.image}} alt={{dish.name}}>
@@ -21,10 +21,17 @@
         </mat-card-actions>
       </mat-card>
     </div>
+    
+   
+    
+    
 
   </div>
-
-  <div fxFlex="40">
+ 
+  
+  
+  
+  <div fxFlex="40" *ngIf="dish.comments">
     <h3>Comments</h3>
     <mat-list *ngFor="let dish of dish.comments">
       <mat-list-item>
@@ -38,5 +45,11 @@
     </mat-list>
 
   </div>
+  <div [hidden]="dish">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  
+  
+  
 
 </div>
